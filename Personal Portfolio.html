@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Portfolio - Aparna Mishra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .resume-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 4px solid #f5b700;
+            background: rgba(245, 183, 0, 0.1);
+        }
+
+        .experience-item,
+        .project-item {
+            border-bottom: 1px solid #e5e5e5;
+            padding: 1rem 0;
+        }
+
+        .experience-item:last-child,
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+            }
+
+            .resume-section {
+                background: white !important;
+                border-left: 2px solid #333 !important;
+            }
+        }
+
+        .smooth-transition {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body class="bg-[#f5f1e9] text-[#333]">
+    <!-- Navigation Header -->
+    <header class="bg-[#3b4d3a] text-[#f5f1e9] p-4 flex flex-col md:flex-row justify-between items-center no-print">
+        <h1 class="text-2xl playfair mb-2 md:mb-0">Aparna Mishra</h1>
+        <nav class="space-y-2 md:space-y-0 md:space-x-4 flex flex-col md:flex-row items-center">
+            <a class="nav-link hover:underline transition smooth-transition cursor-pointer"
+                onclick="showPage('home')">About me</a>
+            <a class="nav-link hover:underline transition smooth-transition cursor-pointer"
+                onclick="showPage('resume')">Resume</a>
+            <a class="nav-link hover:underline transition smooth-transition cursor-pointer"
+                onclick="showPage('work')">Work</a>
+            <a class="bg-[#f5b700] text-[#3b4d3a] px-4 py-2 rounded-full hover:bg-[#e0a800] transition smooth-transition cursor-pointer"
+                onclick="showContactForm()">
+                Get in touch!
+            </a>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Social -->
+        <section class="relative bg-[#3b4d3a] text-[#f5f1e9] p-8 text-center">
+            <h2 class="text-6xl playfair">PORTFOLIO</h2>
+            <div class="mt-4 space-y-2">
+                <p>GH: <a class="underline hover:text-[#f5b700]" href="https://github.com/aparna21400"
+                        target="_blank">github.com/aparna21400</a></p>
+                <p>LI: <a class="underline hover:text-[#f5b700]" href="https://linkedin.com/in/aparna-mishra21"
+                        target="_blank">aparna-mishra21</a></p>
+                <p>Mail: aparnamishra2003@gmail.com</p>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="bg-[#f5f1e9] text-[#333] p-8">
+            <div class="text-center mb-8">
+                <button
+                    class="bg-[#f5b700] text-[#3b4d3a] px-4 py-2 rounded-full hover:bg-[#e0a800] transition smooth-transition"
+                    onclick="scrollToNext()">Scroll down</button>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2 p-4">
+                    <h2 class="text-4xl playfair">Hello, I'm Aparna!</h2>
+                    <p class="mt-4">
+                        I am a self-taught web developer based in India, currently pursuing a BCA degree. Passionate
+                        about creating innovative web solutions and continuously learning new technologies to enhance my
+                        skills in the ever-evolving world of web development.Proficient in Java (core language);
+                        familiar with C++, C, and Python.
+                    </p>
+                    <a class="mt-4 inline-block bg-[#f5b700] text-[#3b4d3a] px-4 py-2 rounded-full hover:bg-[#e0a800] transition smooth-transition"
+                        href="https://linkedin.com/in/aparna-mishra21" target="_blank">
+                        linkedin.com/in/aparna-mishra21
+                    </a>
+                </div>
+
+
+                <!-- Contact -->
+                <div class="md:w-1/2 p-4 flex flex-col items-center">
+                    <div
+                        class="w-48 h-48 bg-[#3b4d3a] rounded-full flex items-center justify-center text-[#f5f1e9] border-4 border-[#f5b700]">
+                        <img src="profile.JPG" alt="Aparna Mishra"
+                            class="rounded-full border-4 border-[#3b4d3a] object-cover w-48 h-48" />
+
+                    </div>
+                    <div class="mt-4 bg-[#f5b700] text-[#3b4d3a] px-4 py-2 rounded-full">23rd February 2003</div>
+                    <div class="mt-4 bg-[#3b4d3a] text-[#f5f1e9] p-4 rounded-lg text-center">
+                        <h3 class="text-xl">Contact</h3>
+                        <p>Delhi, India</p>
+                        <p>aparnamishra2003@gmail.com</p>
+                        <p>9625046273</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="bg-[#3b4d3a] text-[#f5f1e9] p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl playfair">Education</h3>
+                    <ul class="mt-4 space-y-2 list-disc list-inside">
+                        <li>2023-2026: IMS NOIDA - BCA</li>
+                        <li>2021-2022: MLSM College - Senior Secondary</li>
+                        <li>2018-2019: East Point School - Higher Education</li>
+                    </ul>
+                </div>
+
+                <!-- Skills -->
+                <div>
+                    <h3 class="text-2xl playfair">Skills</h3>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="bg-[#f5b700] text-[#3b4d3a] px-3 py-1 rounded-full">#Creativity</span>
+                        <span class="bg-[#f5b700] text-[#3b4d3a] px-3 py-1 rounded-full">#Communication</span>
+                        <span class="bg-[#f5b700] text-[#3b4d3a] px-3 py-1 rounded-full">#Detail-oriented</span>
+                        <span class="bg-[#f5b700] text-[#3b4d3a] px-3 py-1 rounded-full">#Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#f5f1e9] text-[#333] p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Technical skills -->
+                <div>
+                    <h3 class="text-2xl playfair">Technical Skills</h3>
+                    <h4 class="text-xl mt-4">Coding Skills</h4>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                        <span class="bg-[#3b4d3a] text-[#f5f1e9] px-3 py-1 rounded-full">HTML</span>
+                        <span class="bg-[#3b4d3a] text-[#f5f1e9] px-3 py-1 rounded-full">CSS</span>
+                        <span class="bg-[#3b4d3a] text-[#f5f1e9] px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="bg-[#3b4d3a] text-[#f5f1e9] px-3 py-1 rounded-full">DSA</span>
+                        <span class="bg-[#3b4d3a] text-[#f5f1e9] px-3 py-1 rounded-full">C++</span>
+                        <span class="bg-[#3b4d3a] text-[#f5f1e9] px-3 py-1 rounded-full">bootstrap</span>
+                        <span class="bg-[#3b4d3a] text-[#f5f1e9] px-3 py-1 rounded-full">Java</span>
+                    </div>
+                </div>
+                <!-- Languages -->
+                <div>
+                    <h3 class="text-2xl playfair">Languages</h3>
+                    <ul class="mt-4 space-y-2 list-disc list-inside">
+                        <li>English</li>
+                        <li>Hindi</li>
+                    </ul>
+
+                    <!-- Hobbies -->
+                    <h3 class="text-2xl playfair mt-8">Hobbies & Interests</h3>
+                    <ul class="mt-4 space-y-2 list-disc list-inside">
+                        <li>Cooking</li>
+                        <li>Traveling</li>
+                        <li>Reading</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Projects -->
+        <section class="bg-[#3b4d3a] text-[#f5f1e9] p-8">
+            <div>
+                <h3 class="text-2xl playfair mb-4">Projects</h3>
+                <ul class="space-y-2 list-disc list-inside">
+                    <li>Dec'24:Sidebar Navigation Menu - HTML & CSS</li>
+                    <li>Feb'25: Student Marks Management System - Java</li>
+                    <li>May'25: Spotify Home Page Clone - UI-focused web project</li>
+                    <li>Apr'25:ToDo List Web Application - Responsive Frontend Project </li>
+                    <li>May'25:Personal Portfolio - Web Development </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- RESUME PAGE -->
+    <div id="resume" class="page">
+        <div class="bg-white min-h-screen">
+            <!-- Resume Header -->
+            <div class="bg-[#3b4d3a] text-[#f5f1e9] p-8 text-center">
+                <h1 class="text-4xl playfair mb-2">APARNA MISHRA</h1>
+                <p class="text-xl mb-4">Web Developer & BCA Student</p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <span><i class="fas fa-envelope mr-2"></i>aparnamishra2003@gmail.com</span>
+                    <span><i class="fas fa-phone mr-2"></i>9625046273</span>
+                    <span><i class="fas fa-map-marker-alt mr-2"></i>Delhi, India</span>
+                    <span><i class="fab fa-linkedin mr-2"></i>aparna-mishra21</span>
+                    <span><i class="fab fa-github mr-2"></i>aparna21400</span>
+                </div>
+                <div class="mt-4 no-print">
+                    <button onclick="window.print()"
+                        class="bg-[#f5b700] text-[#3b4d3a] px-6 py-2 rounded-full hover:bg-[#e0a800] transition mr-4">
+                        <i class="fas fa-print mr-2"></i>Print Resume
+                    </button>
+                    <button onclick="downloadResume()"
+                        class="bg-[#f5b700] text-[#3b4d3a] px-6 py-2 rounded-full hover:bg-[#e0a800] transition">
+                        <i class="fas fa-download mr-2"></i>Download PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto p-6">
+                <!-- Professional Summary -->
+                <div class="resume-section">
+                    <h2 class="text-2xl playfair text-[#3b4d3a] mb-4">Professional Summary</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Passionate and self-taught web developer currently pursuing BCA degree with strong foundation in
+                        front-end and back-end technologies. Demonstrated ability to create responsive, user-friendly
+                        web applications with clean, efficient code. Eager to apply technical skills and creative
+                        problem-solving abilities in a dynamic development environment.
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <div class="resume-section">
+                    <h2 class="text-2xl playfair text-[#3b4d3a] mb-4">Education</h2>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-semibold">Bachelor of Computer Applications (BCA)</h3>
+                                <p class="text-[#f5b700] font-medium">IMS NOIDA</p>
+                            </div>
+                            <span class="text-gray-600 text-sm">2023 - 2026</span>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-semibold">Senior Secondary Education</h3>
+                                <p class="text-[#f5b700] font-medium">MLSM College</p>
+                            </div>
+                            <span class="text-gray-600 text-sm">2021 - 2022</span>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-semibold">Higher Secondary Education</h3>
+                                <p class="text-[#f5b700] font-medium">East Point School</p>
+                            </div>
+                            <span class="text-gray-600 text-sm">2018 - 2019</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="resume-section">
+                    <h2 class="text-2xl playfair text-[#3b4d3a] mb-4">Technical Skills</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 text-[#f5b700]">Programming Languages</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Java</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">C++</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 text-[#f5b700]">Web Technologies</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">HTML5</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">CSS3</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Responsive Design</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">UI/UX Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projects -->
+                <div class="resume-section">
+                    <h2 class="text-2xl playfair text-[#3b4d3a] mb-4">Projects</h2>
+                    <div class="space-y-6">
+                        <div class="project-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">Personal Portfolio</h3>
+                                <span class="text-gray-600 text-sm">May 2025</span>
+                            </div>
+                            <p class="text-gray-700 mb-2">Responsive personal website showcasing projects and skills</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">Tailwind CSS</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">ToDo List Web Application</h3>
+                                <span class="text-gray-600 text-sm">Apr 2025</span>
+                            </div>
+                            <p class="text-gray-700 mb-2">Responsive frontend project with full CRUD functionality</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">CSS</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">LocalStorage</span>
+
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">Spotify Home Page Clone</h3>
+                                <span class="text-gray-600 text-sm">Mar 2025</span>
+                            </div>
+                            <p class="text-gray-700 mb-2">UI-focused web project replicating the Spotify homepage layout
+                                and styling</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">CSS</span>
+
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">Student Marks Management System</h3>
+                                <span class="text-gray-600 text-sm">Feb 2025</span>
+                            </div>
+                            <p class="text-gray-700 mb-2">Console-based application for managing student records and
+                                grades</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">Java</span>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">Sidebar Navigation Menu</h3>
+                                <span class="text-gray-600 text-sm">Dec 2024</span>
+                            </div>
+                            <p class="text-gray-700 mb-2">Interactive navigation component with smooth animations</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Competencies -->
+                <div class="resume-section">
+                    <h2 class="text-2xl playfair text-[#3b4d3a] mb-4">Core Competencies</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="text-center p-3 bg-gray-50 rounded-lg">
+                            <i class="fas fa-lightbulb text-[#f5b700] text-2xl mb-2"></i>
+                            <p class="text-sm font-medium">Creativity</p>
+                        </div>
+                        <div class="text-center p-3 bg-gray-50 rounded-lg">
+                            <i class="fas fa-comments text-[#f5b700] text-2xl mb-2"></i>
+                            <p class="text-sm font-medium">Communication</p>
+                        </div>
+                        <div class="text-center p-3 bg-gray-50 rounded-lg">
+                            <i class="fas fa-search text-[#f5b700] text-2xl mb-2"></i>
+                            <p class="text-sm font-medium">Detail-oriented</p>
+                        </div>
+                        <div class="text-center p-3 bg-gray-50 rounded-lg">
+                            <i class="fas fa-sync-alt text-[#f5b700] text-2xl mb-2"></i>
+                            <p class="text-sm font-medium">Adaptability</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages & Interests -->
+                <div class="resume-section">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h2 class="text-2xl playfair text-[#3b4d3a] mb-4">Languages</h2>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span>English</span>
+                                    <span class="text-[#f5b700] font-medium">Fluent</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Hindi</span>
+                                    <span class="text-[#f5b700] font-medium">Native</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl playfair text-[#3b4d3a] mb-4">Interests</h2>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Cooking</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Traveling</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Reading</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WORK PAGE -->
+    <div id="work" class="page">
+        <div class="bg-[#f5f1e9] min-h-screen">
+            <section class="bg-[#3b4d3a] text-[#f5f1e9] p-8 text-center">
+                <h1 class="text-4xl playfair mb-4">My Work</h1>
+                <p class="text-lg">Explore my projects and development journey</p>
+            </section>
+
+            <div class="max-w-6xl mx-auto p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div
+                            class="h-48 bg-gradient-to-br from-[#3b4d3a] to-[#f5b700] flex items-center justify-center">
+                            <i class="fas fa-tasks text-white text-4xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl playfair mb-2">ToDo List App</h3>
+                            <p class="text-gray-600 mb-4">A responsive web application for task management with CRUD
+                                operations.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">CSS</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">JavaScript</span>
+                            </div>
+                            <a href="https://github.com/aparna21400/TODOList" target="_blank" rel="noopener noreferrer">
+                                <button
+                                    class="bg-[#f5b700] text-[#3b4d3a] px-4 py-2 rounded hover:bg-[#e0a800] transition">
+                                    View Project
+                                </button>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div
+                            class="h-48 bg-gradient-to-br from-[#f5b700] to-[#3b4d3a] flex items-center justify-center">
+                            <i class="fas fa-bars text-white text-4xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl playfair mb-2">Navigation Menu</h3>
+                            <p class="text-gray-600 mb-4">Interactive sidebar navigation with smooth animations and
+                                transitions.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">CSS</span>
+                            </div>
+                            <button class="bg-[#f5b700] text-[#3b4d3a] px-4 py-2 rounded hover:bg-[#e0a800] transition">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div
+                            class="h-48 bg-gradient-to-br from-[#3b4d3a] via-[#f5b700] to-[#3b4d3a] flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-4xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl playfair mb-2">Student Management</h3>
+                            <p class="text-gray-600 mb-4">Java-based system for managing student records and academic
+                                performance.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">Java</span>
+                            </div>
+                            <button class="bg-[#f5b700] text-[#3b4d3a] px-4 py-2 rounded hover:bg-[#e0a800] transition">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div
+                            class="h-48 bg-gradient-to-br from-[#3b4d3a] via-[#f5b700] to-[#3b4d3a] flex items-center justify-center">
+                            <i class="fas fa-solid fa-music text-white text-4xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl playfair mb-2">Spotify Home Page Clone</h3>
+                            <p class="text-gray-600 mb-4">UI-focused built and replicating the layout and styling</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">CSS</span>
+
+                            </div>
+                            <button class="bg-[#f5b700] text-[#3b4d3a] px-4 py-2 rounded hover:bg-[#e0a800] transition">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Project 5 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div
+                            class="h-48 bg-gradient-to-br from-[#3b4d3a] via-[#f5b700] to-[#3b4d3a] flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-4xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl playfair mb-2">Portfolio</h3>
+                            <p class="text-gray-600 mb-4">Responsive personal website showcasing projects and skills</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">CSS</span>
+                                <span class="bg-[#3b4d3a] text-white px-2 py-1 rounded text-xs">JavaScript</span>
+
+                            </div>
+                            <button class="bg-[#f5b700] text-[#3b4d3a] px-4 py-2 rounded hover:bg-[#e0a800] transition">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl playfair text-[#3b4d3a]">Get in Touch</h2>
+                <button onclick="closeContactForm()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form onsubmit="submitContactForm(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                    <input type="text" required
+                        class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-[#f5b700]">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                    <input type="email" required
+                        class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-[#f5b700]">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                    <textarea required rows="4"
+                        class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-[#f5b700]"></textarea>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit"
+                        class="bg-[#f5b700] text-[#3b4d3a] px-6 py-2 rounded-lg hover:bg-[#e0a800] transition">
+                        Send Message
+                    </button>
+                    <button type="button" onclick="closeContactForm()"
+                        class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#3b4d3a] text-[#f5f1e9] text-center p-4 no-print">
+        &copy; 2025 Aparna Mishra. All rights reserved.
+    </footer>
+
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Contact Form Functions
+        function showContactForm() {
+            document.getElementById('contactModal').classList.remove('hidden');
+        }
+
+        function closeContactForm() {
+            document.getElementById('contactModal').classList.add('hidden');
+        }
+
+        function submitContactForm(event) {
+            event.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            closeContactForm();
+            event.target.reset();
+        }
+
+        // Scroll to next section (for home page)
+        function scrollToNext() {
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        }
+
+        // Resume Download Function
+        function downloadResume() {
+            // In a real implementation, this would trigger a PDF download
+            alert('Resume download feature would be implemented with a backend service or PDF generation library.');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('contactModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeContactForm();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        function addScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.resume-section, .project-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Initialize animations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            addScrollAnimations();
+        });
+
+        // Add typing effect to main title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Enhanced interactions
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add hover effects to skill tags
+            const skillTags = document.querySelectorAll('.bg-\\[\\#3b4d3a\\], .bg-\\[\\#f5b700\\]');
+            skillTags.forEach(tag => {
+                tag.addEventListener('mouseenter', function () {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.transition = 'transform 0.2s ease';
+                });
+
+                tag.addEventListener('mouseleave', function () {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Add loading animation
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.transition = 'opacity 0.5s ease';
+            }, 100);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeContactForm();
+            }
+        });
+
+        // Mobile menu optimization
+        function optimizeForMobile() {
+            if (window.innerWidth < 768) {
+                // Add mobile-specific optimizations
+                document.querySelectorAll('.hover\\:underline').forEach(link => {
+                    link.addEventListener('touchstart', function () {
+                        this.style.textDecoration = 'underline';
+                    });
+
+                    link.addEventListener('touchend', function () {
+                        setTimeout(() => {
+                            this.style.textDecoration = 'none';
+                        }, 150);
+                    });
+                });
+            }
+        }
+
+        window.addEventListener('resize', optimizeForMobile);
+        window.addEventListener('load', optimizeForMobile);
+
+        // Performance optimization - lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+
+</html>
